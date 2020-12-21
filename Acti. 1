@@ -1,0 +1,102 @@
+struct Productos {
+  var nombre = ""
+  var precio = 0.0
+  var cantidad = 0
+}
+func Recibir(nombreP:String, precioP:Double, cantidadP:Int)->(String, Double, Int){
+  print("Hola!!,por favor escriba el nombre del producto")
+let nombreP = readLine()!
+
+print("Hola!!,por favor escriba el precio del producto ")
+datoUsuario = readLine()!
+let precioP = Double(datoUsuario) ?? 0
+
+print("Hola!!,por favor escriba la cantidad del producto ")
+datoUsuario = readLine()!
+let cantidadP = Int(datoUsuario) ?? 0
+return (nombreP, precioP, cantidadP)
+}
+
+func Ordenar(arr:[Productos])->[Productos]{
+  var array = arr
+  for _ in 0..<array.count-1{
+    for j in 0..<array.count-1{
+      if (array[j].precio > array[j+1].precio){
+        let temp = array[j]
+        array[j] = array[j+1]
+        array[j+1] = temp
+      }
+    }
+  }
+  return array
+}
+
+var datoUsuario = ""
+var nombreP = "" 
+var precioP = 0.0
+var cantidadP = 0
+var array = [Productos]()
+
+
+print("Primer producto")
+let objeto1 = Recibir(nombreP:nombreP, precioP:precioP, cantidadP:cantidadP)
+var producto1 = Productos(nombre:objeto1.0, precio:objeto1.1, cantidad:objeto1.2)
+array.append(producto1)
+print("/////////////////////////////////////////////////")
+
+print("Segundo producto")
+let objeto2 = Recibir(nombreP:nombreP, precioP:precioP, cantidadP:cantidadP)
+var producto2 = Productos(nombre:objeto2.0, precio:objeto2.1, cantidad:objeto2.2)
+array.append(producto2)
+print("/////////////////////////////////////////////////")
+
+print("Tercer producto")
+let objeto3 = Recibir(nombreP:nombreP, precioP:precioP, cantidadP:cantidadP)
+var producto3 = Productos(nombre:objeto3.0, precio:objeto3.1, cantidad:objeto3.2)
+array.append(producto3)
+print("/////////////////////////////////////////////////")
+
+print("Cuarto producto")
+let objeto4 = Recibir(nombreP:nombreP, precioP:precioP, cantidadP:cantidadP)
+var producto4 = Productos(nombre:objeto4.0, precio:objeto4.1, cantidad:objeto4.2)
+array.append(producto4)
+print("/////////////////////////////////////////////////")
+
+print("Quinto producto")
+let objeto5 = Recibir(nombreP:nombreP, precioP:precioP, cantidadP:cantidadP)
+var producto5 = Productos(nombre:objeto5.0, precio:objeto5.1, cantidad:objeto5.2)
+array.append(producto5)
+print("/////////////////////////////////////////////////")
+
+print("Sexto producto")
+let objeto6 = Recibir(nombreP:nombreP, precioP:precioP, cantidadP:cantidadP)
+var producto6 = Productos(nombre:objeto6.0, precio:objeto6.1, cantidad:objeto6.2)
+array.append(producto6)
+print("/////////////////////////////////////////////////")
+
+print("Septimo producto")
+let objeto7 = Recibir(nombreP:nombreP, precioP:precioP, cantidadP:cantidadP)
+var producto7 = Productos(nombre:objeto7.0, precio:objeto7.1, cantidad:objeto7.2)
+array.append(producto7)
+print("/////////////////////////////////////////////////")
+
+print("Octavo producto")
+let objeto8 = Recibir(nombreP:nombreP, precioP:precioP, cantidadP:cantidadP)
+var producto8 = Productos(nombre:objeto8.0, precio:objeto8.1, cantidad:objeto8.2)
+array.append(producto8)
+print("/////////////////////////////////////////////////")
+
+print("Noveno producto")
+let objeto9 = Recibir(nombreP:nombreP, precioP:precioP, cantidadP:cantidadP)
+var producto9 = Productos(nombre:objeto9.0, precio:objeto9.1, cantidad:objeto9.2)
+array.append(producto9)
+print("/////////////////////////////////////////////////")
+
+print("Decimo producto")
+let objeto10 = Recibir(nombreP:nombreP, precioP:precioP, cantidadP:cantidadP)
+var producto10 = Productos(nombre:objeto10.0, precio:objeto10.1, cantidad:objeto10.2)
+array.append(producto10)
+array = Ordenar(arr:array)
+for product in array{
+  print("\(product.nombre), Precio:\(product.precio), \(product.cantidad) en existencia")
+}
