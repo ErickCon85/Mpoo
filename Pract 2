@@ -1,0 +1,77 @@
+class Alumno{
+  let nombre: String 
+  let edad: Int 
+  let promedio: Double
+  var trabajo:Int = 0
+  var beca:Int = 0
+  var licencia: Int = 0
+
+  init(nombre:String, edad:Int, promedio:Double, trabajo:Int, beca:Int, licencia:Int){
+    self.nombre = nombre
+    self.edad = edad
+    self.promedio = promedio
+    self.trabajo = trabajo
+    self.beca = beca
+    self.licencia = licencia
+    agregado(nombre:nombre,edad:edad,promedio:promedio, trabajo:trabajo, beca: beca, licencia: licencia)
+  }
+  
+  func agregado(nombre:String, edad:Int, promedio:Double, trabajo:Int, beca:Int, licencia:Int){
+    print("Nombre Completo: \(nombre)")
+    print("Edad: \(edad)")
+    print("Promedio: \(promedio)")
+    if trabajo == 1{
+      print("Si trabaja")
+    }
+    if beca == 1{
+      print("Si tiene beca")
+    }
+    if licencia == 1{
+      print("Si tiene licencia")
+    }
+    print("\n")
+  }
+}
+
+
+print("Hola, escoge una opción:\n Agregar alumno e Imprimir (1)\n Salir (0)")
+var opcion :Int = 0 
+var datoUsuario = ""
+var nombre = ""
+var edad: Int 
+var promedio: Double
+var trabajo:Int = 0
+var beca:Int = 0
+var licencia:Int = 0
+
+datoUsuario = readLine()!
+opcion = Int(datoUsuario) ?? 0
+
+while opcion != 0 {
+print("Su opción fue : \(opcion)")
+
+  print("Escriba el nombre del alumno")
+  nombre = readLine()!
+  print("Escriba la edad del alumno")
+  datoUsuario = readLine()!
+  edad = Int(datoUsuario) ?? 0
+  print("Escriba el promedio del alumno")
+  datoUsuario = readLine()!
+  promedio = Double(datoUsuario) ?? 0.0
+  print("Escriba si el alumno trabaja (Si(1)/No(0))")
+  datoUsuario = readLine()!
+  trabajo = Int(datoUsuario) ?? 0
+  print("Escriba si el alumno tiene beca (Si(1)/No(0))")
+  datoUsuario = readLine()!
+  beca = Int(datoUsuario) ?? 0
+  print("Escriba si el alumno tiene licencia (Si(1)/No(0))")
+  datoUsuario = readLine()!
+  licencia = Int(datoUsuario) ?? 0
+
+  var estudiantes=Alumno(nombre:nombre,edad:edad,promedio:promedio, trabajo:trabajo, beca: beca, licencia: licencia)
+
+  print("¿Desea seguir agregando Alumnos? Si(1)/No(0)")
+  datoUsuario = readLine()!
+  opcion = Int(datoUsuario) ?? 0
+}
+print("Adiós!!!!")
