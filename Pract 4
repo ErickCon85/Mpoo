@@ -1,0 +1,177 @@
+struct Ventas  {
+var fecha = "" 
+var pago = ""
+var venta = 0.0
+var articulos = 0.0
+var hora = 0.0
+var posicion = 0
+  
+}
+func Recibir( pagoP:String, fechaP:String, ventaP:Double, articulosP:Double, horaP:Double)->(String, String, Double, Double, Double){
+
+print("Por favor escriba la fecha de la venta")
+let fechaP = readLine()!
+
+print("Por favor escriba si el pago sera en efectivo o con tarjeta")
+let pagoP = readLine()!
+
+print("Por favor escriba el total de la venta  ")
+datoUsuario = readLine()!
+let ventaP = Double(datoUsuario) ?? 0
+ 
+print("Escriba en numero de artículos vendidos en la venta")
+datoUsuario = readLine()!
+let articulosP = Double(datoUsuario) ?? 0
+ 
+print("Por favor escriba la Hora de la venta")
+datoUsuario = readLine()!
+let horaP = Double(datoUsuario) ?? 0
+return(fechaP, pagoP, ventaP, articulosP, horaP)
+}
+
+var datoUsuario = ""
+var fechaP = ""
+var pagoP = ""
+var ventaP = 0.0
+var articulosP = 0.0
+var horaP = 0.0
+var array = [Ventas]()
+print("Buenos dias")
+print("venta 1")
+let objeto1 = Recibir(pagoP:pagoP, fechaP:fechaP,               ventaP:ventaP, articulosP:articulosP, horaP:horaP  )
+var venta1 = Ventas(fecha:objeto1.0, pago:objeto1.1, venta:objeto1.2, articulos:objeto1.3, hora:objeto1.4, posicion:1)
+array.append(venta1)
+print("----------------------------")
+
+print("Venta 2")
+let objeto2 = Recibir(pagoP:pagoP, fechaP:fechaP,               ventaP:ventaP, articulosP:articulosP, horaP:horaP )
+var venta2 = Ventas(fecha:objeto2.0, pago:objeto2.1, venta:objeto2.2, articulos:objeto2.3, hora:objeto2.4,posicion:2)
+array.append(venta2)
+print("----------------------------")
+
+print("Venta 3")
+let objeto3 = Recibir(pagoP:pagoP, fechaP:fechaP,               ventaP:ventaP, articulosP:articulosP, horaP:horaP )
+var venta3 = Ventas(fecha:objeto3.0, pago:objeto3.1, venta:objeto3.2, articulos:objeto3.3, hora:objeto3.4,posicion:3)
+array.append(venta3)
+print("----------------------------")
+
+print("Venta 4")
+let objeto4 = Recibir(pagoP:pagoP, fechaP:fechaP,               ventaP:ventaP, articulosP:articulosP, horaP:horaP )
+var venta4 = Ventas(fecha:objeto4.0, pago:objeto4.1, venta:objeto4.2, articulos:objeto4.3, hora:objeto4.4,posicion:4)
+array.append(venta4)
+print("----------------------------")
+
+print("Venta 5")
+let objeto5 = Recibir(pagoP:pagoP, fechaP:fechaP,               ventaP:ventaP, articulosP:articulosP, horaP:horaP )
+var venta5 = Ventas(fecha:objeto5.0, pago:objeto5.1, venta:objeto5.2, articulos:objeto5.3, hora:objeto5.4,posicion:5)
+array.append(venta5)
+print("----------------------------")
+
+print("Venta 6")
+let objeto6 = Recibir(pagoP:pagoP, fechaP:fechaP,               ventaP:ventaP, articulosP:articulosP, horaP:horaP )
+var venta6 = Ventas(fecha:objeto6.0, pago:objeto6.1, venta:objeto6.2, articulos:objeto6.3, hora:objeto6.4,posicion:6)
+array.append(venta6)
+print("----------------------------")
+
+print("Venta 7")
+let objeto7 = Recibir(pagoP:pagoP, fechaP:fechaP,               ventaP:ventaP, articulosP:articulosP, horaP:horaP )
+var venta7 = Ventas(fecha:objeto7.0, pago:objeto7.1, venta:objeto7.2, articulos:objeto7.3, hora:objeto7.4,posicion:7)
+array.append(venta7)
+print("----------------------------")
+
+print("Venta 8")
+let objeto8 = Recibir(pagoP:pagoP, fechaP:fechaP,               ventaP:ventaP, articulosP:articulosP, horaP:horaP )
+var venta8 = Ventas(fecha:objeto8.0, pago:objeto8.1, venta:objeto8.2, articulos:objeto8.3, hora:objeto8.4,posicion:8)
+array.append(venta8)
+print("----------------------------")
+
+print("Venta 9")
+let objeto9 = Recibir(pagoP:pagoP, fechaP:fechaP,               ventaP:ventaP, articulosP:articulosP, horaP:horaP )
+var venta9 = Ventas(fecha:objeto9.0, pago:objeto9.1, venta:objeto9.2, articulos:objeto9.3, hora:objeto9.4,posicion:9)
+array.append(venta9)
+print("----------------------------")
+
+print("Venta 10")
+let objeto10 = Recibir(pagoP:pagoP, fechaP:fechaP,               ventaP:ventaP, articulosP:articulosP, horaP:horaP )
+var venta10 = Ventas(fecha:objeto10.0, pago:objeto10.1, venta:objeto10.2, articulos:objeto10.3, hora:objeto10.4,posicion:10)
+array.append(venta10)
+print("----------------------------")
+
+print("Venta 11")
+let objeto11 = Recibir(pagoP:pagoP, fechaP:fechaP,               ventaP:ventaP, articulosP:articulosP, horaP:horaP )
+var venta11 = Ventas(fecha:objeto11.0, pago:objeto11.1, venta:objeto11.2, articulos:objeto11.3, hora:objeto11.4,posicion:11)
+array.append(venta11)
+print("----------------------------")
+
+print("Venta 12")
+let objeto12 = Recibir(pagoP:pagoP, fechaP:fechaP,               ventaP:ventaP, articulosP:articulosP, horaP:horaP)
+var venta12 = Ventas(fecha:objeto12.0, pago:objeto12.1, venta:objeto12.2, articulos:objeto12.3, hora:objeto12.4,posicion:12)
+array.append(venta12)
+print("----------------------------")
+
+print("Venta 13")
+let objeto13 = Recibir(pagoP:pagoP, fechaP:fechaP,               ventaP:ventaP, articulosP:articulosP, horaP:horaP )
+var venta13 = Ventas(fecha:objeto13.0, pago:objeto13.1, venta:objeto13.2, articulos:objeto13.3, hora:objeto13.4,posicion:13)
+array.append(venta13)
+print("----------------------------")
+
+print("Venta 14")
+let objeto14 = Recibir(pagoP:pagoP, fechaP:fechaP,               ventaP:ventaP, articulosP:articulosP, horaP:horaP )
+var venta14 = Ventas(fecha:objeto14.0, pago:objeto14.1, venta:objeto14.2, articulos:objeto14.3, hora:objeto14.4,posicion:14)
+array.append(venta14)
+print("----------------------------")
+
+print("Venta 15")
+let objeto15 = Recibir(pagoP:pagoP, fechaP:fechaP,               ventaP:ventaP, articulosP:articulosP, horaP:horaP )
+var venta15 = Ventas(fecha:objeto15.0, pago:objeto15.1, venta:objeto15.2, articulos:objeto15.3, hora:objeto15.4,posicion:15)
+array.append(venta15)
+print("----------------------------")
+ 
+//Funcion_de_Producto__Total
+func ProductoTotal(arr:[Ventas])->Double{
+  var array = arr
+  for j in 0..<array.count{
+    totalP += array[j].venta   
+  }
+  return totalP
+}
+var totalP = ProductoTotal(arr:array)
+print ("Venta total por día:")
+for product in array{
+  print("La venta fue de $\(product.venta) en la fecha \(product.fecha)")
+}
+print( "Venta promedio por dia:$\(totalP/15)")
+
+
+
+
+func VentaMayor(arr:[Ventas]){
+  var array = arr
+  for _ in 0..<array.count-1{
+    for j in 0..<array.count-1{
+
+      if (array[j].articulos > array[j+1].articulos){
+        let temp = array[j]
+        array[j] = array[j+1]
+        array[j+1] = temp
+      } 
+    }
+  }
+
+  print("la menor venta de articulos fue: \(array[0].articulos) que fue la venta:  \(array[0].posicion)")
+  print("la mayor venta de producto fue:\(array[14].articulos) que fue la venta:  \(array[14].posicion)")
+  
+
+}
+ VentaMayor(arr:array)
+
+
+func HoraPromedio(arr:[Ventas])->Double{
+  var array = arr
+  for j in 0..<array.count{
+    horasP += array[j].hora    
+  }
+  return horasP
+}
+var horasP = HoraPromedio(arr:array)
+print ("Hora promedio en la que mas se vende: \(horasP/15) horas")
