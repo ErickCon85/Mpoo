@@ -1,0 +1,24 @@
+func Potencia (base: Int, exponente: Int)->(Int){
+  var i = 0
+  while i < exponente{
+    potencia = potencia * base
+    i += 1
+  }
+  return potencia
+}
+var potencia = 1
+var total = 0
+var a = 0
+var b = 0
+var i = 0
+print("Hola por favor escribe 'a'")
+a = Int(readLine()!) ?? 0
+print("Hola por favor escribe 'b'")
+b = Int(readLine()!) ?? 0
+while i<b+1 {
+  potencia = 1
+  total += Potencia(base: i, exponente: a)
+  print("numero \(i) suma \(total)")
+  i += 1
+}
+print(total)
