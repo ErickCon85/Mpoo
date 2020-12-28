@@ -1,0 +1,22 @@
+struct Numeros{
+  var x = 1
+  var n = 0
+}
+func Elevado(x:Int, n:Int)->(Int){
+var suma = x
+switch n{
+  case 0:
+    return 1
+  case 1:
+    return 2
+  default:
+    suma = suma * Elevado(x:suma, n:n-1)
+    return  suma
+}
+}
+var nVeces: Int
+print("Hola, introduce 'n' :))")
+nVeces = Int(readLine()!) ?? 0
+var objeto1 = (Numeros(x: 2, n: nVeces)) 
+print("El resultado es:")
+print(Elevado(x: objeto1.x, n: objeto1.n))
