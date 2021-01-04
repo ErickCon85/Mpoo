@@ -1,0 +1,453 @@
+class Alumno{
+  let mAlumno: String
+  let nombre: String
+  let colegiatura: Int
+  let grado: String
+  let promedio: Int
+  
+  init(mAlumno: String, nombre: String, colegiatura: Int, grado: String, promedio: Int){
+    self.mAlumno = mAlumno
+    self.nombre = nombre
+    self.colegiatura = colegiatura
+    self.grado = grado
+    self.promedio = promedio
+  }
+}
+
+class Primaria: Alumno{
+  let promedioLiteratura: Int
+  let promedioEspañol: Int
+
+  init(mAlumno: String, nombre: String, colegiatura: Int, grado: String, promedio: Int, promedioLiteratura: Int, promedioEspañol: Int){
+    self.promedioLiteratura = promedioLiteratura
+    self.promedioEspañol = promedioEspañol
+    super.init(mAlumno: mAlumno, nombre: nombre, colegiatura: colegiatura, grado: grado, promedio: promedio)
+    print("Alumno de primaria creado")
+  }
+}
+
+class Secundaria: Alumno{
+  let promedioIngles: Int
+  let promedioMusica: Int
+  let promedioEspañol: Int
+
+  init(mAlumno: String, nombre: String, colegiatura: Int, grado: String, promedio: Int, promedioIngles: Int, promedioMusica:Int, promedioEspañol: Int){
+    self.promedioIngles = promedioIngles
+    self.promedioMusica = promedioMusica
+    self.promedioEspañol = promedioEspañol
+    super.init(mAlumno: mAlumno, nombre: nombre, colegiatura: colegiatura, grado: grado, promedio: promedio)
+    print("Alumno de Secundaria creado")
+  }
+}
+
+class Prepa: Alumno{
+  let promedioAlgebra: Int
+  let promedioEspañol: Int
+  let promedioIngles: Int
+
+  init(mAlumno: String, nombre: String, colegiatura: Int, grado: String, promedio: Int, promedioIngles: Int, promedioEspañol: Int, promedioAlgebra: Int){
+    self.promedioAlgebra = promedioAlgebra
+    self.promedioEspañol = promedioEspañol
+    self.promedioIngles = promedioIngles
+    super.init(mAlumno: mAlumno, nombre: nombre, colegiatura: colegiatura, grado: grado, promedio: promedio)
+  }
+}
+
+class Personal{
+  let numEmpleado: Int
+  let nombre: String
+  let sueldo: Int
+  let fechaIngreso: String
+  let cargo: String
+
+  init(numEmpleado:Int, nombre: String, sueldo: Int, fechaIngreso: String, cargo: String){
+    self.numEmpleado = numEmpleado
+    self.nombre = nombre
+    self.sueldo = sueldo
+    self.fechaIngreso = fechaIngreso
+    self.cargo = cargo
+  }
+}
+
+class PersonalOperativo: Personal{
+  let diasTrabajo: Int
+
+  init(numEmpleado:Int, nombre: String, sueldo: Int, fechaIngreso: String, cargo: String, diasTrabajo: Int){
+    self.diasTrabajo = diasTrabajo
+    super.init(numEmpleado:numEmpleado, nombre: nombre, sueldo: sueldo, fechaIngreso: fechaIngreso, cargo: cargo)
+    print("Personal Operativo creado")
+  }
+}
+
+class PersonalSeguridad: Personal{
+  let diasTrabajo: Int
+
+  init(numEmpleado:Int, nombre: String, sueldo: Int, fechaIngreso: String, cargo: String, diasTrabajo: Int){
+    self.diasTrabajo = diasTrabajo
+    super.init(numEmpleado:numEmpleado, nombre: nombre, sueldo: sueldo, fechaIngreso: fechaIngreso, cargo: cargo)
+    print("Personal de Seguridad creado")
+  }
+}
+
+class Profesores: Personal{
+  let asesorias: String
+  let ingles: String
+  let diasTrabajo: Int
+  let nivelEstudios: String
+  let actividad: String
+
+  init(numEmpleado:Int, nombre: String, sueldo: Int, fechaIngreso: String, cargo: String,asesorias: String, ingles: String,diasTrabajo:Int,nivelEstudios: String, actividad: String){
+    self.asesorias = asesorias
+    self.ingles = ingles
+    self.diasTrabajo = diasTrabajo
+    self.nivelEstudios = nivelEstudios
+    self.actividad = actividad
+    super.init(numEmpleado:numEmpleado, nombre: nombre, sueldo: sueldo, fechaIngreso: fechaIngreso, cargo: cargo)
+    print("Profesor creado")
+  }
+}
+
+class Directores: Personal{
+  let clases: String
+  let diasTrabajo: Int
+
+  init(numEmpleado:Int, nombre: String, sueldo: Int, fechaIngreso: String, cargo: String,clases: String, diasTrabajo: Int){
+    self.clases = clases
+    self.diasTrabajo = diasTrabajo
+    super.init(numEmpleado:numEmpleado, nombre: nombre, sueldo: sueldo, fechaIngreso: fechaIngreso, cargo: cargo)
+    print("Director creado")
+  }
+}
+func Ordenar(arr:[Primaria]){
+   var array = arr
+  for _ in 0..<array.count-1{
+    for j in 0..<array.count-1{
+
+      if (array[j].promedio > array[j+1].promedio){
+        let temp = array[j]
+        array[j] = array[j+1]
+        array[j+1] = temp
+      }
+    }
+  }
+    for producto in array{
+    print("La matricula del alumno es \(producto.mAlumno), el nombre del alumno es \(producto.nombre), el monto de su colegiatura es \(producto.colegiatura), el grado que cursa en la primaria es \(producto.grado), su promedio es \(producto.promedio), su calificacion en Literatura es \(producto.promedioLiteratura) y su calificacion en Español es \(producto.promedioEspañol)" )
+  }
+}
+func Ordenar1(arr:[Secundaria]){
+   var array = arr
+  for _ in 0..<array.count-1{
+    for j in 0..<array.count-1{
+
+      if (array[j].promedio > array[j+1].promedio){
+        let temp = array[j]
+        array[j] = array[j+1]
+        array[j+1] = temp
+      }
+    }
+  }
+  for producto in array{
+    print("La matricula del alumno es \(producto.mAlumno), el nombre del alumno es \(producto.nombre), el monto de su colegiatura es \(producto.colegiatura), el grado que cursa en la secundaria es \(producto.grado), su promedio es \(producto.promedio), su calificacion en Ingles es \(producto.promedioIngles),su calificacion en Musica es \(producto.promedioMusica) y su calificacion en Español es \(producto.promedioEspañol)" )}
+}
+func Ordenar2(arr:[Prepa]){
+   var array = arr
+  for _ in 0..<array.count-1{
+    for j in 0..<array.count-1{
+
+      if (array[j].promedio > array[j+1].promedio){
+        let temp = array[j]
+        array[j] = array[j+1]
+        array[j+1] = temp
+      }
+    }
+  }
+    for producto in array{
+    print("La matricula del alumno es \(producto.mAlumno), el nombre del alumno es \(producto.nombre), el monto de su colegiatura es \(producto.colegiatura), el grado que cursa en la secundaria es \(producto.grado), su promedio es \(producto.promedio), su calificacion en Algebra es \(producto.promedioAlgebra),su calificacion en Ingles es \(producto.promedioIngles) y su calificacion en Español es \(producto.promedioEspañol)" )
+  }
+}
+func Ordenar3(arr:[Profesores]){
+   var array = arr
+  for _ in 0..<array.count-1{
+    for j in 0..<array.count-1{
+
+      if (array[j].numEmpleado > array[j+1].numEmpleado){
+        let temp = array[j]
+        array[j] = array[j+1]
+        array[j+1] = temp
+      }
+    }
+  }
+  for producto in array{
+    print("El numero del empleado es \(producto.numEmpleado), el nombre del empleado es \(producto.nombre), el sueldo es \(producto.sueldo), la fecha de ingreso es \(producto.fechaIngreso), el cargo que desarrolla es \(producto.cargo), el profesor \(producto.asesorias) da asesorias,\(producto.ingles), el profesor trabaja \(producto.diasTrabajo) dias, \(producto.nivelEstudios) y \(producto.actividad) ")
+  }
+  
+
+}
+func Ordenar4(arr:[Directores]){
+   var array = arr
+  for _ in 0..<array.count-1{
+    for j in 0..<array.count-1{
+
+      if (array[j].numEmpleado > array[j+1].numEmpleado){
+        let temp = array[j]
+        array[j] = array[j+1]
+        array[j+1] = temp
+      }
+    }
+  }
+for producto in array{
+    print("El numero del empleado es \(producto.numEmpleado), el nombre del empleado es \(producto.nombre), el sueldo es \(producto.sueldo), la fecha de ingreso es \(producto.fechaIngreso), el cargo que desarrolla es \(producto.cargo), el Director \(producto.clases) da clases como profesor suplente, el Director trabaja \(producto.diasTrabajo) dias ")
+  }
+}
+func Ordenar5(arr:[PersonalOperativo]){
+   var array = arr
+  for _ in 0..<array.count-1{
+    for j in 0..<array.count-1{
+
+      if (array[j].numEmpleado > array[j+1].numEmpleado){
+        let temp = array[j]
+        array[j] = array[j+1]
+        array[j+1] = temp
+      }
+    }
+  }
+for producto in array{
+    print("El numero del empleado es \(producto.numEmpleado), el nombre del empleado es \(producto.nombre), el sueldo es \(producto.sueldo), la fecha de ingreso es \(producto.fechaIngreso), el cargo que desarrolla es \(producto.cargo), el Personal Operativo trabaja \(producto.diasTrabajo) dias ")
+  }
+}
+func Ordenar6(arr:[PersonalSeguridad]){
+   var array = arr
+  for _ in 0..<array.count-1{
+    for j in 0..<array.count-1{
+
+      if (array[j].numEmpleado > array[j+1].numEmpleado){
+        let temp = array[j]
+        array[j] = array[j+1]
+        array[j+1] = temp
+      }
+    }
+  }
+for producto in array{
+    print("El numero del empleado es \(producto.numEmpleado), el nombre del empleado es \(producto.nombre), el sueldo es \(producto.sueldo), la fecha de ingreso es \(producto.fechaIngreso), el cargo que desarrolla es \(producto.cargo), el Personal de Seguridad trabaja \(producto.diasTrabajo) dias ")
+  }
+}
+print("Hola :))")
+var opcion = 1
+var opcion2 = 1
+var mAlumno: String
+var nombre: String
+var colegiatura: Int
+var grado: String
+var promedio: Int
+var promedioLiteratura: Int
+var promedioEspañol: Int
+var promedioIngles: Int
+var promedioMusica: Int
+var promedioAlgebra: Int
+var alumnosPrimaria: [Primaria] = []
+var alumnosSecundaria: [Secundaria] = []
+var alumnosPrepa: [Prepa] = []
+var empleadoProfesor: [Profesores] = []
+var empleadoDirector: [Directores] = []
+var empleadoOperativo: [PersonalOperativo] = []
+var empleadoSeguridad: [PersonalSeguridad] = []
+var numEmpleado: Int
+var sueldo: Int
+var fechaIngreso: String
+var cargo: String
+var asesorias: String
+var ingles: String
+var diasTrabajo: Int
+var nivelEstudios: String
+var actividad: String
+var clases: String
+
+while opcion != 0 {
+print("Por favor escoge una opcion: (1) Agregar alumno (2) Agregar Personal (3) Imprimir Alumnos (4) Imprimir Personal (0) Salir")
+opcion = Int(readLine()!) ?? 0
+switch opcion{
+  case 1:
+
+    while opcion2 != 0 {
+      print("De que grado es el alumno: (1)Primaria (2)Secundaria (3)Preparatoria (0) Dejar de agregar alumnos")
+      opcion2 = Int(readLine()!) ?? 0
+      switch opcion2{
+        case 1:
+          print("Escriba la matricula del Alumno")
+          mAlumno = readLine()!
+          print("Escriba el nombre del Alumno")
+          nombre = readLine()!
+          print("Escriba la colegiatura del Alumno")
+          colegiatura = Int(readLine()!) ?? 0
+          print("Escriba el grado del Alumno")
+          grado = readLine()!
+          print("Escriba el promedio de Literatura")
+          promedioLiteratura = Int(readLine()!) ?? 0
+          print("Escriba el promedio de Español")
+          promedioEspañol = Int(readLine()!) ?? 0
+          promedio = promedioLiteratura + promedioEspañol
+          promedio = promedio / 2
+          alumnosPrimaria.append(Primaria(mAlumno: mAlumno, nombre: nombre, colegiatura: colegiatura, grado: grado, promedio: promedio,promedioLiteratura: promedioLiteratura, promedioEspañol: promedioEspañol))
+        case 2:
+          print("Escriba la matricula del Alumno")
+          mAlumno = readLine()!
+          print("Escriba el nombre del Alumno")
+          nombre = readLine()!
+          print("Escriba la colegiatura del Alumno")
+          colegiatura = Int(readLine()!) ?? 0
+          print("Escriba el grado del Alumno")
+          grado = readLine()!
+          print("Escriba el promedio de Ingles")
+          promedioIngles = Int(readLine()!) ?? 0
+          print("Escriba el promedio de Musica")
+          promedioMusica = Int(readLine()!) ?? 0
+          print("Escriba el promedio de Español")
+          promedioEspañol = Int(readLine()!) ?? 0
+          promedio = promedioIngles + promedioMusica 
+          promedio += promedioEspañol
+          promedio = promedio / 3
+          alumnosSecundaria.append(Secundaria(mAlumno: mAlumno, nombre: nombre, colegiatura: colegiatura, grado: grado, promedio: promedio, promedioIngles: promedioIngles, promedioMusica: promedioMusica, promedioEspañol: promedioEspañol))
+        case 3:
+          print("Escriba la matricula del Alumno")
+          mAlumno = readLine()!
+          print("Escriba el nombre del Alumno")
+          nombre = readLine()!
+          print("Escriba la colegiatura del Alumno")
+          colegiatura = Int(readLine()!) ?? 0
+          print("Escriba el grado del Alumno")
+          grado = readLine()!
+          print("Escriba el promedio de Ingles")
+          promedioIngles = Int(readLine()!) ?? 0
+          print("Escriba el promedio de Algebra")
+          promedioAlgebra = Int(readLine()!) ?? 0
+          print("Escriba el promedio de Español")
+          promedioEspañol = Int(readLine()!) ?? 0
+          promedio = promedioIngles + promedioAlgebra
+          promedio += promedioEspañol
+          promedio = promedio / 3
+          alumnosPrepa.append(Prepa(mAlumno: mAlumno, nombre: nombre, colegiatura: colegiatura, grado: grado, promedio: promedio, promedioIngles: promedioIngles, promedioEspañol: promedioEspañol, promedioAlgebra: promedioAlgebra))
+        default:
+        print("Saliendo...")
+      }
+    }
+  case 2:
+    while opcion2 != 0 {
+      print("Cual es el cargo asignado al empleado: (1)Profesor (2)Director (3) Personal Operativo (4) Personal de seguridad (0)Salir")
+      opcion2 = Int(readLine()!) ?? 0
+      switch opcion2{
+        case 1:
+          print("Escriba el número del empleado")
+          numEmpleado = Int(readLine()!) ?? 0
+          print("Escriba el nombre del empleado")
+          nombre = readLine()!
+          print("Escriba el sueldo del empleado")
+          sueldo = Int(readLine()!) ?? 0
+          print("Escriba la fecha de ingreso")
+          fechaIngreso = readLine()!
+          print("Escriba el cargo del empleado")
+          cargo = readLine()!
+          print("Además de clases, ¿tambien da asesorias?")
+          asesorias = readLine()!
+          ingles = "el profesor habla y lee Ingles"
+          diasTrabajo = 5
+          nivelEstudios = "el profesor cuenta con al menos una licenciatura"
+          actividad = "el profesor es quien evalua a los alumnos"
+          empleadoProfesor.append(Profesores(numEmpleado: numEmpleado, nombre: nombre, sueldo: sueldo, fechaIngreso: fechaIngreso, cargo: cargo, asesorias: asesorias, ingles: ingles,diasTrabajo: diasTrabajo ,nivelEstudios: nivelEstudios, actividad: actividad))
+        case 2:
+          print("Escriba el número del empleado")
+          numEmpleado = Int(readLine()!) ?? 0
+          print("Escriba el nombre del empleado")
+          nombre = readLine()!
+          print("Escriba el sueldo del empleado")
+          sueldo = Int(readLine()!) ?? 0
+          print("Escriba la fecha de ingreso")
+          fechaIngreso = readLine()!
+          print("Escriba el cargo del empleado")
+          cargo = readLine()!
+          print("Además de coordinar actividades académicas, ¿da clases?")
+          clases = readLine()!
+          diasTrabajo = 5
+          empleadoDirector.append(Directores(numEmpleado:numEmpleado, nombre: nombre, sueldo: sueldo, fechaIngreso: fechaIngreso, cargo: cargo,clases: clases, diasTrabajo: diasTrabajo))
+        case 3:
+          print("Escriba el número del empleado")
+          numEmpleado = Int(readLine()!) ?? 0
+          print("Escriba el nombre del empleado")
+          nombre = readLine()!
+          print("Escriba el sueldo del empleado")
+          sueldo = Int(readLine()!) ?? 0
+          print("Escriba la fecha de ingreso")
+          fechaIngreso = readLine()!
+          print("Escriba el cargo del empleado")
+          cargo = readLine()!
+          diasTrabajo = 5
+          empleadoOperativo.append(PersonalOperativo(numEmpleado: numEmpleado, nombre: nombre, sueldo: sueldo, fechaIngreso: fechaIngreso, cargo:cargo, diasTrabajo: diasTrabajo))
+        case 4:
+          print("Escriba el número del empleado")
+          numEmpleado = Int(readLine()!) ?? 0
+          print("Escriba el nombre del empleado")
+          nombre = readLine()!
+          print("Escriba el sueldo del empleado")
+          sueldo = Int(readLine()!) ?? 0
+          print("Escriba la fecha de ingreso")
+          fechaIngreso = readLine()!
+          print("Escriba el cargo del empleado")
+          cargo = readLine()!
+          diasTrabajo = 7
+          empleadoSeguridad.append(PersonalSeguridad(numEmpleado: numEmpleado, nombre: nombre, sueldo: sueldo, fechaIngreso: fechaIngreso, cargo: cargo, diasTrabajo: diasTrabajo))
+        default:
+        print("Saliendo...")
+      }
+    }
+  case 3:
+  while opcion2 != 0 {
+  print("Imprimir Alumnos: (1)Primaria  (2)Secundaria  (3)Prepa (0)Salir")
+  opcion2 = Int(readLine()!) ?? 0
+  switch opcion2{
+    case 1:
+      print("-----------------------------------------------------------")
+      print("Primaria")
+      Ordenar(arr:alumnosPrimaria)
+    case 2:
+      print("-----------------------------------------------------------")
+      print("Secundaria")
+      Ordenar1(arr:alumnosSecundaria)
+    case 3:
+      print("-----------------------------------------------------------")
+      print("Preparatoria")
+      Ordenar2(arr:alumnosPrepa)
+    default:
+      print("Saliendo...")
+    }
+  }
+  case 4:
+    while opcion2 != 0 {
+    print("Imprimir Empleados: (1)Profesores  (2)Directores  (3)Empleados Operativos (4) Empleados de Seguridad (0)Salir")
+    opcion2 = Int(readLine()!) ?? 0
+    switch opcion2 {
+      case 1:
+        print("-----------------------------------------------------------")
+        print("imprimiendo profesores")
+        Ordenar3(arr:empleadoProfesor)
+      case 2:
+        print("-----------------------------------------------------------")
+        print("imprimiendo Directores")
+        Ordenar4(arr:empleadoDirector)
+      case 3:
+        print("-----------------------------------------------------------")
+        print("imprimiendo Empleados Operativo")
+        Ordenar5(arr:empleadoOperativo)
+      case 4:
+        print("-----------------------------------------------------------")
+        print("imprimiendo Empleados de Seguridad")
+        Ordenar6(arr:empleadoSeguridad)
+        print("-----------------------------------------------------------")
+      default:
+      print("Saliendo...")
+    }
+  }
+  default:
+  print("Saliendo...")
+}
+opcion2 = 1
+}
+print("Adios")
