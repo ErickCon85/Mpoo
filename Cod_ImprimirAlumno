@@ -1,0 +1,97 @@
+class Alumno{
+  private let numCuenta: String
+  private let nombre: String
+  
+  init(numCuenta:String, nombre: String){
+    self.numCuenta = numCuenta
+    self.nombre = nombre
+  }
+
+  func obtenerNombre() -> String {
+    return self.nombre
+  }
+}
+
+class Materia{
+  private let clave: Int
+  private let grupo: Int
+  private let nombre: String
+
+  init(clave: Int, grupo: Int, nombre: String){
+    self.clave = clave
+    self.grupo = grupo
+    self.nombre = nombre
+  }
+
+  func obtenerNombre() -> String {
+    return self.nombre
+  }
+}
+
+class ServiciosAcademicos{
+  private let nombre: String
+  var inscripciones = [(Alumno, Materia)]()
+
+
+  init(nombre: String){
+    self.nombre = nombre
+  }
+
+  func inscribeAlumno(alumno: Alumno, materia: Materia){
+    self.inscripciones.append((alumno, materia))
+  }
+
+  func listaAlumnos(materia: Materia){
+    let nombreMateria: String = materia.obtenerNombre()
+
+    print("\n\(nombreMateria):\n")
+    for inscripcion in self.inscripciones {
+      let (alu, m) = inscripcion
+      if m.obtenerNombre() == nombreMateria {
+        print("\(alu.obtenerNombre())\n")
+      }
+    }
+  }
+}
+
+// Materias
+let calculoVectorial = Materia(clave:3221, grupo: 2, nombre: "Cálculo Vectorial")
+let algebraLineal = Materia(clave:2121, grupo: 7, nombre: "Álgebra Lineal")
+let ecuacionesDiferenciales = Materia(clave:2121, grupo: 12, nombre: "Ecuaciones Diferenciales")
+
+// Servicios Académicos
+let sa = ServiciosAcademicos(nombre: "Juanito")
+
+// Alumnos
+let pedro = Alumno(numCuenta: "88", nombre:"Pedro")
+let mariana = Alumno(numCuenta: "89", nombre:"Mariana")
+let andrea = Alumno(numCuenta: "90", nombre:"Andrea")
+let fernando = Alumno(numCuenta: "91", nombre:"Fernando")
+let euri = Alumno(numCuenta: "92", nombre:"Euri")
+let iran = Alumno(numCuenta: "93", nombre:"Iran")
+let adonay = Alumno(numCuenta: "94", nombre:"Adonay")
+let hazel = Alumno(numCuenta: "95", nombre:"Hazel")
+
+// Inscripciones
+sa.inscribeAlumno(alumno: pedro, materia: calculoVectorial)
+sa.inscribeAlumno(alumno: euri, materia: calculoVectorial)
+sa.inscribeAlumno(alumno: iran, materia: calculoVectorial)
+sa.inscribeAlumno(alumno: hazel, materia: calculoVectorial)
+sa.inscribeAlumno(alumno: adonay, materia: calculoVectorial)
+
+sa.inscribeAlumno(alumno: pedro, materia: algebraLineal)
+sa.inscribeAlumno(alumno: andrea, materia: algebraLineal)
+sa.inscribeAlumno(alumno: iran, materia: algebraLineal)
+sa.inscribeAlumno(alumno: mariana, materia: algebraLineal)
+sa.inscribeAlumno(alumno: hazel, materia: algebraLineal)
+
+sa.inscribeAlumno(alumno: mariana, materia: ecuacionesDiferenciales)
+sa.inscribeAlumno(alumno: fernando, materia: ecuacionesDiferenciales)
+sa.inscribeAlumno(alumno: andrea, materia: ecuacionesDiferenciales)
+sa.inscribeAlumno(alumno: hazel, materia: ecuacionesDiferenciales)
+sa.inscribeAlumno(alumno: euri, materia: ecuacionesDiferenciales)
+
+// Imprimir listas
+sa.listaAlumnos(materia: calculoVectorial)
+sa.listaAlumnos(materia: algebraLineal)
+sa.listaAlumnos(materia: ecuacionesDiferenciales)
